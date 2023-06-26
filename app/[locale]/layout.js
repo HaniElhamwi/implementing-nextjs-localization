@@ -13,13 +13,12 @@ export const metadata = {
 export default function RootLayout({ children, params }) {
   const locale = useLocale();
 
-  // Show a 404 error if the user requests an unknown locale
   if (params.locale !== locale) {
     notFound();
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} dir="rtl">
       <body className={inter.className}>{children}</body>
     </html>
   );
